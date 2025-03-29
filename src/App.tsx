@@ -13,7 +13,7 @@ function App() {
 			<Routes>
 				<Route path='/' element={<Login />} />
 				<Route path='/home' element={<Home />} />
-				<Route path='/ai-interview-boot/sign-up' element={<SignUp />} />
+				<Route path='/sign-up' element={<SignUp />} />
 				<Route path='login/forgot-password' element={<ForgotPassword />} />
 				<Route
 					path='forgot-password/change-password'
