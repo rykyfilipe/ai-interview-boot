@@ -1,7 +1,7 @@
 /** @format */
 
-const url = process.env.BACKEND_URL;
-const port = process.env.PORT;
+const url = process.env.VITE_BACKEND_URL;
+const port = process.env.VITE_PORT;
 
 export function authenticateUser(user: string, password: string): string {
 	var token = user + ":" + password;
@@ -81,7 +81,7 @@ export async function signUp(
 
 export async function forgotPassword(email: string) {
 	try {
-		const res = await fetch("http://localhost:3001/forgot-password", {
+		const res = await fetch(`${url}:${port}/forgot-password`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -111,17 +111,14 @@ export async function forgotPassword(email: string) {
 
 export const changePassword = async (newPassword: string, username: string) => {
 	try {
-		const res = await fetch(
-			"http://localhost:3001/forgot-password/change-password",
-			{
-				method: "PATCH",
-				headers: {
-					"Content-Type": "application/json",
-					Authorization: authenticateUser(username, newPassword),
-				},
-				body: JSON.stringify({ username }),
+		const res = await fetch(`${url}:${port}/forgot-password/change-password`, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: authenticateUser(username, newPassword),
 			},
-		);
+			body: JSON.stringify({ username }),
+		});
 
 		if (!res.ok) {
 			throw console.error(res);
@@ -136,7 +133,7 @@ export const changePassword = async (newPassword: string, username: string) => {
 
 export const getUser = async (email: string) => {
 	try {
-		const res = await fetch("http://localhost:3001/user", {
+		const res = await fetch(`${url}:${port}/user`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
