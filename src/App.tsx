@@ -9,17 +9,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
 	return (
-		<Router>
+		<Router basename='/ai-interview-boot'>
 			<Routes>
-				<Route path='/ai-interview-boot' element={<Login />} />
-				<Route path='/ai-interview-boot/home' element={<Home />} />
+				<Route path='/' element={<Login />} />
+				<Route path='/home' element={<Home />} />
 				<Route path='/ai-interview-boot/sign-up' element={<SignUp />} />
+				<Route path='login/forgot-password' element={<ForgotPassword />} />
 				<Route
-					path='/ai-interview-boot/login/forgot-password'
-					element={<ForgotPassword />}
-				/>
-				<Route
-					path='/ai-interview-boot/forgot-password/change-password'
+					path='forgot-password/change-password'
 					element={<ChangePassword />}
 				/>
 			</Routes>
