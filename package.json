@@ -10,7 +10,7 @@
 		"preview": "vite preview",
 		"devStart": "nodemon backend/server.js",
 		"predeploy": "npm run build",
-		"deploy": "gh-pages -d dist",
+		"deploy": "main -d dist",
 		"clean": "rm -rf dist"
 	},
 	"dependencies": {
