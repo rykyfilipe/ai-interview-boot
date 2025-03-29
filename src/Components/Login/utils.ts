@@ -1,7 +1,7 @@
 /** @format */
 
-const url = process.env.VITE_BACKEND_URL;
-const port = process.env.VITE_PORT;
+const url = import.meta.env.VITE_BACKEND_URL;
+const port = import.meta.env.VITE_BACKEND_PORT || 3001;
 
 export function authenticateUser(user: string, password: string): string {
 	var token = user + ":" + password;
