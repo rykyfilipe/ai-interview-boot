@@ -3,6 +3,9 @@
 const url = import.meta.env.VITE_BACKEND_URL;
 const port = import.meta.env.VITE_BACKEND_PORT || 3001;
 
+console.log("VITE_BACKEND_URL:", import.meta.env.VITE_BACKEND_URL);
+console.log("VITE_PORT:", import.meta.env.VITE_PORT);
+
 export function authenticateUser(user: string, password: string): string {
 	var token = user + ":" + password;
 	var hash = btoa(token);
