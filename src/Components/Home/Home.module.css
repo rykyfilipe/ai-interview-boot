@@ -1,0 +1,14 @@
+/** @format */
+
+.chat-container {
+	width: 60vw;
+	border-radius: 25px;
+	background-color: rgb(243, 246, 248);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-shadow: -5px -5px 5px rgb(255, 255, 255),
+		-1px -1px 10px rgb(255, 255, 255), 5px 5px 20px black,
+		1px 1px 1px rgb(143, 139, 139);
+}
