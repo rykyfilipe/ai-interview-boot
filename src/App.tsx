@@ -11,12 +11,15 @@ function App() {
 	return (
 		<Router>
 			<Routes>
-				<Route path='/home' element={<Home />} />
-				<Route path='/' element={<Login />} />
-				<Route path='/sign-up' element={<SignUp />} />
-				<Route path='/login/forgot-password' element={<ForgotPassword />} />
+				<Route path='/ai-interview-boot' element={<Login />} />
+				<Route path='/ai-interview-boot/home' element={<Home />} />
+				<Route path='/ai-interview-boot/sign-up' element={<SignUp />} />
 				<Route
-					path='/forgot-password/change-password'
+					path='/ai-interview-boot/login/forgot-password'
+					element={<ForgotPassword />}
+				/>
+				<Route
+					path='/ai-interview-boot/forgot-password/change-password'
 					element={<ChangePassword />}
 				/>
 			</Routes>
